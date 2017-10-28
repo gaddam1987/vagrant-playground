@@ -1,0 +1,10 @@
+---
+- name: run Redis container
+  docker_container:
+    name: redis
+    image: redis
+    state: started
+    exposed_ports:
+    - 6379
+  become: True
+  become_method: sudo

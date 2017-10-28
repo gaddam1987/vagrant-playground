@@ -1,0 +1,15 @@
+---
+- hosts: controller
+  vars:
+    - clean_up_old_docker_packages:
+        - docker
+        - docker-common
+        - docker-client
+        - docker-engine
+    - required_packages:
+        - python-docker
+  pre_tasks:
+  - import_tasks: tasks/setup_docker.yaml
+
+  tasks:
+  - import_tasks: tasks/install_redis.yaml

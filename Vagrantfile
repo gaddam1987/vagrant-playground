@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     controller.vm.network :private_network, ip: "192.168.61.10"
 
     controller.vm.provision :ansible_local do |ansible|
-      ansible.playbook       = "playbook/install_docker.yaml"
+      ansible.playbook       = "playbook/main.yaml"
       ansible.verbose        = "v"
       ansible.install        = true
       ansible.inventory_path = "hosts"
