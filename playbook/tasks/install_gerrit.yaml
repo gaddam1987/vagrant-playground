@@ -1,11 +1,11 @@
 ---
 - name: Run gerrit
   docker_container:
-    name: jenkins
-    image: jenkins
+    name: gerritforge
+    image: gerrit-centos7
     state: started
     ports:
       - 8080:8080
-      - 50000:50000
+      - 29418:29418
   become: True
   become_method: sudo
