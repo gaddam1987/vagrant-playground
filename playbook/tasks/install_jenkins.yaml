@@ -1,0 +1,11 @@
+---
+- name: Run jenkins Container
+  docker_container:
+    name: jenkins
+    image: jenkins
+    state: started
+    ports:
+      - 8080:8080
+      - 50000:50000
+  become: True
+  become_method: sudo

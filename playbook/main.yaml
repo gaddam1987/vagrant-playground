@@ -10,6 +10,5 @@
         - python-docker
   pre_tasks:
   - import_tasks: tasks/setup_docker.yaml
-
   tasks:
-  - import_tasks: tasks/install_redis.yaml
+  - import_tasks: tasks/install_gerrit.yaml

@@ -3,11 +3,10 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box ="centos/7"
-
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 29418, host: 29418
 
   config.vm.define "controller" , primary: true do |controller|
-    controller.vm.network :private_network, ip: "192.168.61.10"
-
     controller.vm.provision :ansible_local do |ansible|
       ansible.playbook       = "playbook/main.yaml"
       ansible.verbose        = "v"

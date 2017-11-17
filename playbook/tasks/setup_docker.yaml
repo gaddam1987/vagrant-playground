@@ -40,5 +40,6 @@
   systemd:
     name: docker
     state: started
+    enabled: True
   become: True
   become_method: sudo
